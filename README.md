@@ -11,7 +11,7 @@
     php artisan migrate
     php artisan migrate:fresh --seed
     php artisan optimize:clear
-    php artisan shield:setup --fresh
+    php artisan shield:setup
     php artisan shield:generate --all
     php artisan shield:super-admin
     php artisan storage:link
@@ -19,6 +19,9 @@
     npm run build
     php artisan serve
 
+    note : 
+    You should run `shield:install --fresh` instead to refresh the Core package tables and setup shield.? No!
+      
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     'email'     =   'superadmin@gmail.com'

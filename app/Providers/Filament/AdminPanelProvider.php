@@ -36,6 +36,11 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->brandLogo(asset('images/logo.png'))
+            ->darkModeBrandLogo(asset('images/logo-dark.png'))
+            ->brandLogoHeight('5rem')
+            // ->favicon(asset('images/favicon.png'))
+            ->sidebarCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -56,11 +61,14 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class
+
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])
             ->plugins([
+                \Hasnayeen\Themes\ThemesPlugin::make(),
                 FilamentProgressbarPlugin::make()->color('#fc0303'),
                 VersionsPlugin::make(),
                 LightSwitchPlugin::make()

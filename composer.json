@@ -9,6 +9,7 @@
         "awcodes/filament-versions": "^2.0",
         "awcodes/light-switch": "^1.0",
         "bezhansalleh/filament-language-switch": "^3.1",
+        "bezhansalleh/filament-shield": "^3.3",
         "filament/filament": "^3.2",
         "hasnayeen/themes": "^3.0",
         "jeffgreco13/filament-breezy": "^2.4",

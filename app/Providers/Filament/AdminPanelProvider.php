@@ -70,6 +70,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 \Hasnayeen\Themes\ThemesPlugin::make(),
                 FilamentProgressbarPlugin::make()->color('#fc0303'),
                 VersionsPlugin::make(),
@@ -77,7 +78,7 @@ class AdminPanelProvider extends PanelProvider
                 ->position(Alignment::TopCenter),
                 BreezyCore::make()
                 ->myProfile(
-                    shouldRegisterUserMenu: false, // Sets the 'account' link in the panel User Menu (default = true)
+                    shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
                     shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
                     navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
                     hasAvatars: false, // Enables the avatar upload form component (default = false)

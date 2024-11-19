@@ -18,6 +18,8 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
+use Awcodes\FilamentVersions\VersionsPlugin;
+
 
 
 class AdminPanelProvider extends PanelProvider
@@ -58,6 +60,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentProgressbarPlugin::make()->color('#fc0303'),
+                VersionsPlugin::make(),
                 
                 ])
             ->databaseNotifications()

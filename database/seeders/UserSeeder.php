@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                 'is_admin' => 1,
             ],
         ]);
-        // User::factory()->count(99)->create(); // Men-generate 50 user secara otomatis
+        User::factory()->count(99)->create(); // Men-generate 50 user secara otomatis
 
     }
 }

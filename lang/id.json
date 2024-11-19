@@ -1,4 +1,11 @@
 {
     "User": "Pengguna",
-    "Email": "Email"
+    "Email": "Email",
+
+    "Start Date": "Tanggal Mulai",
+    "End Date": "Tanggal Selesai",
+    "Report Download": "Unduh Laporan",
+    "Pilih Periode Laporan": "Pilih Periode Laporan",
+    "Silahkan Pilih Rentang Waktu yang Anda Inginkan": "Silahkan Pilih Rentang Waktu yang Anda Inginkan",
+    "Unduh Laporan": "Unduh Laporan"
 }

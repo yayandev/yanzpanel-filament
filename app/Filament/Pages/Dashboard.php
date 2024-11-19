@@ -37,7 +37,8 @@ class Dashboard extends \Filament\Pages\Dashboard
         return [
 
             Action::make('downloadPdf')
-                ->label('Unduh Laporan')
+                ->label('Report Download')
+                ->translateLabel()
                 ->icon('heroicon-o-printer')
                 ->modalHeading('Pilih Periode Laporan')
                 ->modalDescription('Silahkan Pilih Rentang Waktu yang Anda Inginkan')
@@ -47,16 +48,17 @@ class Dashboard extends \Filament\Pages\Dashboard
                 ->modalWidth('md')
                 ->form([
                     DatePicker::make('startDate')
-                        ->label('Tanggal Mulai'),
+                        ->label('Start Date')
+                        ->translateLabel(),
                     DatePicker::make('endDate')
-                        ->label('Tanggal Akhir'),
+                        ->label('End Date')
+                        ->translateLabel(),
                 ])
                 ->action(function (array $data) {
                     // Redirect ke halaman unduh PDF dengan tanggal dari form modal
                     $this->redirectRoute('laporan.pdf.download', [
                         'startDate' => $data['startDate'],
                         'endDate' => $data['endDate'],
-                        'kantor' => request('kantor'), // Jika ada kantor yang dipilih di halaman
                     ]);
                 })
                 ->color('primary')
@@ -76,13 +78,15 @@ class Dashboard extends \Filament\Pages\Dashboard
                         DatePicker::make('startDate')
                             ->prefixIcon('heroicon-m-check-circle')
                             ->prefixIconColor('primary')
-                            ->label('Tanggal Mulai')
+                            ->label('Start Date')
+                            ->translateLabel()
                             ->inlineLabel()
                             ->required(),
                         DatePicker::make('endDate')
                             ->prefixIcon('heroicon-m-check-circle')
                             ->prefixIconColor('primary')
-                            ->label('Tanggal Akhir')
+                            ->label('End Date')
+                            ->translateLabel()
                             ->inlineLabel()
                             ->required(),
                     ])->columns(2),

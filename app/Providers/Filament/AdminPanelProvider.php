@@ -22,6 +22,8 @@ use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\LightSwitch\LightSwitchPlugin;
 use Awcodes\LightSwitch\Enums\Alignment;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use Leandrocfe\FilamentApexCharts\FilamentApexChartsPlugin;
+
 
 
 
@@ -74,6 +76,7 @@ class AdminPanelProvider extends PanelProvider
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 \Hasnayeen\Themes\ThemesPlugin::make(),
                 FilamentProgressbarPlugin::make()->color('#fc0303'),
+                FilamentApexChartsPlugin::make(),
                 VersionsPlugin::make(),
                 LightSwitchPlugin::make()
                 ->position(Alignment::TopCenter),

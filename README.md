@@ -20,7 +20,8 @@
     php artisan serve
 
     note : 
-    You should run `shield:install --fresh` instead to refresh the Core package tables and setup shield.? No!
+    You should run `shield:install --fresh` ?
+    Answer/Select : No!
       
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

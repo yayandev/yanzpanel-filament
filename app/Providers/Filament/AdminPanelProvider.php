@@ -19,6 +19,8 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Awcodes\FilamentVersions\VersionsPlugin;
+use Awcodes\LightSwitch\LightSwitchPlugin;
+use Awcodes\LightSwitch\Enums\Alignment;
 
 
 
@@ -61,7 +63,8 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentProgressbarPlugin::make()->color('#fc0303'),
                 VersionsPlugin::make(),
-                
+                LightSwitchPlugin::make()
+                ->position(Alignment::TopCenter),
                 ])
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');

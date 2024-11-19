@@ -75,15 +75,15 @@ class Dashboard extends \Filament\Pages\Dashboard
                     ->schema([
                         DatePicker::make('startDate')
                             ->prefixIcon('heroicon-m-check-circle')
-                           ->prefixIconColor('primary')
-                            ->prefix('MULAI')
-                            ->label('')
+                            ->prefixIconColor('primary')
+                            ->label('Tanggal Mulai')
+                            ->inlineLabel()
                             ->required(),
                         DatePicker::make('endDate')
                             ->prefixIcon('heroicon-m-check-circle')
-                           ->prefixIconColor('primary')
-                            ->prefix('SAMPAI')
-                            ->label('')
+                            ->prefixIconColor('primary')
+                            ->label('Tanggal Akhir')
+                            ->inlineLabel()
                             ->required(),
                     ])->columns(2),
             ]);

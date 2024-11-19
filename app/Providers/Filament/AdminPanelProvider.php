@@ -21,6 +21,8 @@ use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\LightSwitch\LightSwitchPlugin;
 use Awcodes\LightSwitch\Enums\Alignment;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
+
 
 
 
@@ -73,6 +75,14 @@ class AdminPanelProvider extends PanelProvider
                 VersionsPlugin::make(),
                 LightSwitchPlugin::make()
                 ->position(Alignment::TopCenter),
+                BreezyCore::make()
+                ->myProfile(
+                    shouldRegisterUserMenu: false, // Sets the 'account' link in the panel User Menu (default = true)
+                    shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
+                    navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
+                    hasAvatars: false, // Enables the avatar upload form component (default = false)
+                    slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
+                ),
                 ])
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');

@@ -17,6 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
+
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -54,10 +56,11 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->plugins([
+                FilamentProgressbarPlugin::make()->color('#fc0303'),
+                
+                ])
             ->databaseNotifications()
-            ->databaseNotificationsPolling('30s')
-            
-            
-            ;
+            ->databaseNotificationsPolling('30s');
     }
 }

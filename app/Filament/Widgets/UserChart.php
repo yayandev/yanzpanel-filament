@@ -47,7 +47,7 @@ class UserChart extends ApexChartWidget
             $series[] = [
                 'name' => 'TOTAL',
                 'data' => $totalData->map(fn(TrendValue $value) => $value->aggregate),
-                'color' => '#fa3a0a', // Warna garis
+                'color' => 'teal', // Warna garis
             ];
         }
 

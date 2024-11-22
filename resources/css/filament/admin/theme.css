@@ -16,12 +16,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(99.6deg,
-    rgba(232, 233, 235, 1) 10.6%,
-    rgba(240, 241, 243, 1) 32.9%,
-    rgba(248, 249, 251, 0.7) 50%,
-    rgba(240, 241, 243, 1) 67.1%,
-    rgba(232, 233, 235, 1) 83.4%);
+    background-image: radial-gradient(
+        ellipse at Bottom Right,
+        rgba(var(--primary-950), 1) 0%,
+        rgba(var(--primary-950), 0.9) 15%,
+        rgba(var(--primary-900), 0.7) 30%,
+        rgba(var(--primary-900), 0.5) 45%,
+        rgba(var(--primary-950), 0.3) 60%,
+        rgba(var(--primary-950), 0.1) 75%,
+        rgba(255, 255, 255, 1) 100%
+        );
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     z-index: -1;
 }

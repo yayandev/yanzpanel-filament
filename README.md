@@ -43,8 +43,6 @@
 <p align="center">
                 <img src="https://raw.githubusercontent.com/isaandreanme/filament-starter/refs/heads/main/ss/1.png" />
                 <img src="https://raw.githubusercontent.com/isaandreanme/filament-starter/refs/heads/main/ss/2.png" />
-                <img src="https://raw.githubusercontent.com/isaandreanme/filament-starter/refs/heads/main/ss/3.png" />
-                <img src="https://raw.githubusercontent.com/isaandreanme/filament-starter/refs/heads/main/ss/4.png" />
 
 
 </p>

@@ -19,7 +19,8 @@
     npm run build
     php artisan serve
 
-    note : 
+    note :
+    Before Run Migration Setup Your .env
     You should run `shield:install --fresh` ?
     Answer/Select : No!
       

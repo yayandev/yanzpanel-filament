@@ -10,7 +10,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                white: '#F3F4F6',
+                white: '#FFFFFF',
                 platinum: '#E8E9EB',
                 moonlight: '#F6F5F3',
                 'translucent': {

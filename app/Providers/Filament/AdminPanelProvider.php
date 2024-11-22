@@ -39,14 +39,14 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            // ->colors([
-            //     'primary' => Color::Amber,
-            // ])
+            ->colors([
+                'primary' => Color::Amber,
+            ])
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->defaultThemeMode(ThemeMode::Dark)
             ->brandLogo(asset('images/logo.png'))
             ->darkModeBrandLogo(asset('images/logo-dark.png'))
-            ->brandLogoHeight('5rem')
+            ->brandLogoHeight('3rem')
             // ->favicon(asset('images/favicon.png'))
             ->sidebarCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

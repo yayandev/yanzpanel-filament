@@ -19,6 +19,7 @@ use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
+use Teguh02\IndonesiaTerritoryForms\IndonesiaTerritoryForms;
 
 class UserResource extends Resource
 {
@@ -67,14 +68,14 @@ class UserResource extends Resource
                 ->label(trans('filament-users::user.resource.password'))
                 ->password()
                 ->maxLength(255)
-                ->dehydrateStateUsing(static function ($state, $record) use ($form) {
+                ->dehydrateStateUsing(static function ($state, $record) {
                     return !empty($state)
                         ? Hash::make($state)
                         : $record->password;
                 }),
         ];
 
-
+        // Menambahkan Select untuk peran jika FilamentShield diaktifkan
         if (config('filament-users.shield') && class_exists(\BezhanSalleh\FilamentShield\FilamentShield::class)) {
             $rows[] = Forms\Components\Select::make('roles')
                 ->multiple()
@@ -82,15 +83,23 @@ class UserResource extends Resource
                 ->relationship('roles', 'name')
                 ->label(trans('filament-users::user.resource.roles'));
         }
+        $rows[] = TextInput::make('address')
+            ->required()
+            ->columnSpanFull()
+            ->label('Address'); // Komponen IndonesiaTerritoryForms ditambahkan langsung
+        // Menambahkan IndonesiaTerritoryForms setelah roles tanpa pengecekan if
+        $rows[] = IndonesiaTerritoryForms::make(); // Komponen IndonesiaTerritoryForms ditambahkan langsung
 
+        // Set schema untuk form
         $form->schema($rows);
 
         return $form;
     }
 
+
     public static function table(Table $table): Table
     {
-        if(class_exists( STS\FilamentImpersonate\Tables\Actions\Impersonate::class) && config('filament-users.impersonate')){
+        if (class_exists(STS\FilamentImpersonate\Tables\Actions\Impersonate::class) && config('filament-users.impersonate')) {
             $table->actions([Impersonate::make('impersonate')]);
         }
         $table

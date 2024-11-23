@@ -19,6 +19,7 @@
         "leandrocfe/filament-apex-charts": "^3.1",
         "njxqlus/filament-progressbar": "^1.0",
         "stechstudio/filament-impersonate": "^3.14",
+        "teguh02/indonesia-territory-forms": "^1.1",
         "tomatophp/filament-users": "^2.0"
     },
     "require-dev": {

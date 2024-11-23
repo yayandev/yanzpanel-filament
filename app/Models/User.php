@@ -26,6 +26,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address',
+        'province_id',     // Menambahkan kolom yang diizinkan
+        'city_id',         // Menambahkan kolom yang diizinkan
+        'district_id',     // Menambahkan kolom yang diizinkan
+        'subdistrict_id',  // Menambahkan kolom yang diizinkan
+        'postal_code',     // Menambahkan kolom yang diizinkan
+
     ];
 
     /**
